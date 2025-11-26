@@ -12,14 +12,14 @@ const GiftSection = () => {
         bankName: "VietCombank",
         accountNumber: "9386000635",
         // VietQR format: https://api.vietqr.io/image/{BANK_ID}-{ACCOUNT_NO}-{TEMPLATE}.jpg
-        qrCode: "https://img.vietqr.io/image/VCB-9386000635-print.jpg?amount=0&addInfo=Mung%20cuoi%20Long%20Thuy&accountName=NGUYEN%20THANH%20LONG"
+        qrCode: "https://img.vietqr.io/image/VCB-9386000635-print.jpg?accountName=NGUYEN%20THANH%20LONG"
     };
 
     const brideAccount = {
         name: "Hà Minh Thuỷ",
         bankName: "BIDV",
         accountNumber: "2206820528",
-        qrCode: "https://img.vietqr.io/image/BIDV-2206820528-print.jpg?amount=0&addInfo=Mung%20cuoi%20Long%20Thuy&accountName=HA%20MINH%20THUY"
+        qrCode: "https://img.vietqr.io/image/BIDV-2206820528-print.jpg?accountName=HA%20MINH%20THUY"
     };
 
     const account = activeTab === 'groom' ? groomAccount : brideAccount;
@@ -42,8 +42,8 @@ const GiftSection = () => {
                     <button
                         onClick={() => setActiveTab('groom')}
                         className={`px-8 py-3 rounded-full font-medium transition-all ${activeTab === 'groom'
-                                ? 'bg-stone-900 text-white shadow-lg'
-                                : 'bg-white text-stone-600 hover:bg-stone-100'
+                            ? 'bg-stone-900 text-white shadow-lg'
+                            : 'bg-white text-stone-600 hover:bg-stone-100'
                             }`}
                     >
                         Mừng Chú Rể
@@ -51,8 +51,8 @@ const GiftSection = () => {
                     <button
                         onClick={() => setActiveTab('bride')}
                         className={`px-8 py-3 rounded-full font-medium transition-all ${activeTab === 'bride'
-                                ? 'bg-stone-900 text-white shadow-lg'
-                                : 'bg-white text-stone-600 hover:bg-stone-100'
+                            ? 'bg-stone-900 text-white shadow-lg'
+                            : 'bg-white text-stone-600 hover:bg-stone-100'
                             }`}
                     >
                         Mừng Cô Dâu

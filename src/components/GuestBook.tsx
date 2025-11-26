@@ -16,12 +16,58 @@ const GuestBook = () => {
     const [attending, setAttending] = useState(true);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [isLoading, setIsLoading] = useState(true);
+
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxNGEJ_Pqr8HFU6S3c-V1yxCw61C8fE5waFApCMzBguZU8_8P072x_yArfhlZx8zrjB/exec";
+
+    // Fetch wishes from Google Sheets
+    const fetchWishes = async () => {
+        try {
+            const response = await fetch(GOOGLE_SCRIPT_URL);
+            const data = await response.json();
+
+            if (data.records && Array.isArray(data.records)) {
+                // Convert Google Sheets format to our Wish format
+                const serverWishes: Wish[] = data.records.map((record: any) => ({
+                    name: record.name,
+                    message: record.message,
+                    attending: record.attending === true || record.attending === "Yes",
+                    timestamp: record.timestamp
+                }));
+
+                // Merge with localStorage
+                const savedWishes = localStorage.getItem('wedding-wishes');
+                const localWishes: Wish[] = savedWishes ? JSON.parse(savedWishes) : [];
+
+                // Combine and remove duplicates (based on timestamp + name)
+                const allWishes = [...serverWishes, ...localWishes];
+                const uniqueWishes = allWishes.filter((wish, index, self) =>
+                    index === self.findIndex((w) =>
+                        w.timestamp === wish.timestamp && w.name === wish.name
+                    )
+                );
+
+                // Sort by timestamp (newest first)
+                uniqueWishes.sort((a, b) =>
+                    new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+                );
+
+                setWishes(uniqueWishes);
+            }
+        } catch (error) {
+            console.error("Error fetching wishes:", error);
+            // Fallback to localStorage only
+            const savedWishes = localStorage.getItem('wedding-wishes');
+            if (savedWishes) {
+                setWishes(JSON.parse(savedWishes));
+            }
+        } finally {
+            setIsLoading(false);
+        }
+    };
 
     useEffect(() => {
-        const savedWishes = localStorage.getItem('wedding-wishes');
-        if (savedWishes) {
-            setWishes(JSON.parse(savedWishes));
-        }
+        fetchWishes();
     }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -42,10 +88,10 @@ const GuestBook = () => {
         localStorage.setItem('wedding-wishes', JSON.stringify(updatedWishes));
 
         try {
-            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxNGEJ_Pqr8HFU6S3c-V1yxCw61C8fE5waFApCMzBguZU8_8P072x_yArfhlZx8zrjB/exec"; 
-            await fetch(GOOGLE_SCRIPT_URL, 
-                { 
-                    method: 'POST', 
+            await fetch(GOOGLE_SCRIPT_URL,
+                {
+                    method: 'POST',
+                    mode: 'no-cors', // Important for Google Apps Script
                     body: JSON.stringify(newWish),
                     headers: { 'Content-Type': 'application/json' }
                 });
@@ -54,6 +100,12 @@ const GuestBook = () => {
             setSubmitStatus('success');
             setName('');
             setMessage('');
+
+            // Refresh wishes from server after submission
+            setTimeout(() => {
+                fetchWishes();
+            }, 2000);
+
             setTimeout(() => setSubmitStatus('idle'), 3000);
 
         } catch (error) {
@@ -118,8 +170,8 @@ const GuestBook = () => {
                                 type="submit"
                                 disabled={isSubmitting || submitStatus === 'success'}
                                 className={`w-full py-3 px-6 rounded-lg text-white font-medium flex items-center justify-center gap-2 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 ${submitStatus === 'success'
-                                        ? 'bg-green-600 hover:bg-green-700'
-                                        : 'bg-stone-900 hover:bg-stone-800'
+                                    ? 'bg-green-600 hover:bg-green-700'
+                                    : 'bg-stone-900 hover:bg-stone-800'
                                     }`}
                             >
                                 {isSubmitting ? (
@@ -142,7 +194,12 @@ const GuestBook = () => {
                     {/* Wishes List */}
                     <div className="space-y-6 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
                         <h3 className="text-2xl font-serif mb-6 text-stone-800">Lời chúc mới nhất</h3>
-                        {wishes.length === 0 ? (
+                        {isLoading ? (
+                            <div className="text-center py-12 bg-stone-50 rounded-xl border border-dashed border-stone-200">
+                                <Loader2 className="animate-spin mx-auto mb-2 text-primary" />
+                                <p className="text-stone-400 italic">Đang tải lời chúc...</p>
+                            </div>
+                        ) : wishes.length === 0 ? (
                             <div className="text-center py-12 bg-stone-50 rounded-xl border border-dashed border-stone-200">
                                 <p className="text-stone-400 italic">Chưa có lời chúc nào. Hãy là người đầu tiên!</p>
                             </div>

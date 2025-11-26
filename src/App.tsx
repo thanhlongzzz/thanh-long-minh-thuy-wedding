@@ -6,6 +6,7 @@ import LoveQuote from './components/LoveQuote';
 import Events from './components/Events';
 import Location from './components/Location';
 import Gallery from './components/Gallery';
+import Gallery2 from './components/Gallery2';
 import SlideAlbum from './components/SlideAlbum';
 import GiftSection from './components/Gift';
 import GuestBook from './components/GuestBook';
@@ -29,6 +30,7 @@ function App() {
       <Events />
       <Location />
       <Gallery />
+      <Gallery2 />
       <GiftSection />
       <GuestBook />
       <Footer />

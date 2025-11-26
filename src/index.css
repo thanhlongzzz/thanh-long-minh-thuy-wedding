@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --font-serif: "Playfair Display", serif;
+    --font-serif: "Great Vibes", cursive;
     --font-sans: "Inter", sans-serif;
     --color-primary: #d4af37;
     /* Gold */
@@ -22,12 +22,16 @@
   }
 
   h1,
-  h2,
+  h2 {
+    font-family: var(--font-serif);
+  }
+
   h3,
   h4,
   h5,
   h6 {
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
+    font-weight: 600;
   }
 }
 
