@@ -15,7 +15,7 @@ const images = [
   "/assets/gallery/KIM_2722.jpg",
   "/assets/gallery/KIM_2786.jpg",
 
-  "/assets/gallery/KIM_2803.jpg",
+  "/assets/gallery/KIM_2798.jpg",
   "/assets/gallery/KIM_2966.jpg",
   "/assets/gallery/KIM_2977.jpg",
   "/assets/gallery/KIM_3992.jpg",

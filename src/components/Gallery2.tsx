@@ -12,7 +12,7 @@ const PHOTOS = [
   { id: 5, src: "/assets/gallery/KIM_2704.jpg", alt: "Nụ cười", category: "Moments" },
   { id: 6, src: "/assets/gallery/KIM_2722.jpg", alt: "Váy cưới", category: "Dress" },
   { id: 7, src: "/assets/gallery/KIM_2786.jpg", alt: "Hoa cưới", category: "Decor" },
-  { id: 8, src: "/assets/gallery/KIM_2803.jpg", alt: "Hạnh phúc", category: "Emotion" },
+  { id: 8, src: "/assets/gallery/KIM_2798.jpg", alt: "Hạnh phúc", category: "Emotion" },
 ];
 /* 
 "/assets/gallery/KIM_2354.jpg"

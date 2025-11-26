@@ -8,8 +8,8 @@ const Location = () => {
     const groomLocation = {
         name: "Tư Gia Nhà Trai",
         address: "Đội 2, Cao Xá, Phường Sơn Nam, Tỉnh Hưng Yên",
-        mapLink: "https://maps.app.goo.gl/WNsM6fNiTVpbyHMTA",
-        embedUrl: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d629.4006837961354!2d106.03477931072554!3d20.686856155012684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDQxJzEyLjQiTiAxMDbCsDAyJzA1LjkiRQ!5e1!3m2!1svi!2s!4v1764155020905!5m2!1svi!2s"
+        mapLink: "https://maps.app.goo.gl/jZWtcBvqEksjwuTP9",
+        embedUrl: "https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d933.1437912831585!2d106.034779!3d20.686856!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDQxJzEyLjQiTiAxMDbCsDAyJzA1LjkiRQ!5e0!3m2!1svi!2sus!4v1764178822047!5m2!1svi!2sus"
     };
 
     const brideLocation = {
