@@ -42,8 +42,13 @@ const GuestBook = () => {
         localStorage.setItem('wedding-wishes', JSON.stringify(updatedWishes));
 
         try {
-            // const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_SCRIPT_URL_HERE"; 
-            // await fetch(GOOGLE_SCRIPT_URL, { ... });
+            const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxNGEJ_Pqr8HFU6S3c-V1yxCw61C8fE5waFApCMzBguZU8_8P072x_yArfhlZx8zrjB/exec"; 
+            await fetch(GOOGLE_SCRIPT_URL, 
+                { 
+                    method: 'POST', 
+                    body: JSON.stringify(newWish),
+                    headers: { 'Content-Type': 'application/json' }
+                });
             await new Promise(resolve => setTimeout(resolve, 1000));
 
             setSubmitStatus('success');
