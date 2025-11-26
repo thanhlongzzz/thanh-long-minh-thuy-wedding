@@ -1,47 +1,88 @@
 import { motion } from 'framer-motion';
 import SectionTitle from './SectionTitle';
 import { Calendar, Clock, MapPin } from 'lucide-react';
+import { useState } from 'react';
 
 const Events = () => {
-    const events = [
+    const [activeTab, setActiveTab] = useState<'groom' | 'bride'>('groom');
+
+    const groomEvents = [
         {
-            title: "Lễ Vu Quy",
-            time: "09:00 AM",
-            date: "20/12/2025",
-            location: "Tư Gia Nhà Gái",
-            address: "Số 123, Đường ABC, TP. Hà Nội",
+            title: "Bữa Cơm Thân Mật",
+            time: "16:00",
+            date: "Thứ 7, 20/12/2025",
+            lunarDate: "Mồng 1/11 Ất Tỵ",
+            location: "Tư Gia Nhà Trai",
+            address: "Đội 2, Cao Xá, Phường Sơn Nam, Tỉnh Hưng Yên",
             image: "https://images.unsplash.com/photo-1519225448526-722609e862e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             title: "Lễ Thành Hôn",
-            time: "10:30 AM",
-            date: "21/12/2025",
+            time: "15:00",
+            date: "Chủ Nhật, 21/12/2025",
+            lunarDate: "Mồng 2/11 Ất Tỵ",
             location: "Tư Gia Nhà Trai",
-            address: "Số 456, Đường XYZ, TP. Hà Nội",
+            address: "Đội 2, Cao Xá, Phường Sơn Nam, Tỉnh Hưng Yên",
             image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-        },
-        {
-            title: "Tiệc Rượu",
-            time: "11:30 AM",
-            date: "21/12/2025",
-            location: "Trung Tâm Tiệc Cưới",
-            address: "Sảnh A, Khách Sạn Grand Plaza",
-            image: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         }
     ];
+
+    const brideEvents = [
+        {
+            title: "Bữa Cơm Thân Mật",
+            time: "16:00",
+            date: "Thứ 7, 20/12/2025",
+            lunarDate: "Mồng 1/11 Ất Tỵ",
+            location: "Tư Gia Nhà Gái",
+            address: "21E, Phù Sa, Phường Sơn Tây, Hà Nội",
+            image: "https://images.unsplash.com/photo-1519225448526-722609e862e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            title: "Lễ Thành Hôn",
+            time: "12:00",
+            date: "Chủ Nhật, 21/12/2025",
+            lunarDate: "Mồng 2/11 Ất Tỵ",
+            location: "Tư Gia Nhà Gái",
+            address: "21E, Phù Sa, Phường Sơn Tây, Hà Nội",
+            image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        }
+    ];
+
+    const events = activeTab === 'groom' ? groomEvents : brideEvents;
 
     return (
         <section className="py-20 bg-stone-50">
             <div className="container mx-auto px-4">
                 <SectionTitle title="Wedding Events" subtitle="The Schedule" />
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Tab Selector */}
+                <div className="flex justify-center gap-4 mb-12">
+                    <button
+                        onClick={() => setActiveTab('groom')}
+                        className={`px-8 py-3 rounded-full font-medium transition-all ${activeTab === 'groom'
+                                ? 'bg-stone-900 text-white shadow-lg'
+                                : 'bg-white text-stone-600 hover:bg-stone-100'
+                            }`}
+                    >
+                        Nhà Trai
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('bride')}
+                        className={`px-8 py-3 rounded-full font-medium transition-all ${activeTab === 'bride'
+                                ? 'bg-stone-900 text-white shadow-lg'
+                                : 'bg-white text-stone-600 hover:bg-stone-100'
+                            }`}
+                    >
+                        Nhà Gái
+                    </button>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     {events.map((event, index) => (
                         <motion.div
-                            key={index}
+                            key={`${activeTab}-${index}`}
                             initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.2 }}
                             className="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-shadow duration-300"
                         >
@@ -60,11 +101,14 @@ const Events = () => {
                                 <div className="space-y-2 text-stone-600">
                                     <div className="flex items-center justify-center gap-2">
                                         <Calendar size={16} className="text-primary" />
-                                        <span>{event.date}</span>
+                                        <div className="text-left">
+                                            <p className="font-medium">{event.date}</p>
+                                            <p className="text-sm text-stone-500 italic">({event.lunarDate})</p>
+                                        </div>
                                     </div>
                                     <div className="flex items-center justify-center gap-2">
                                         <Clock size={16} className="text-primary" />
-                                        <span>{event.time}</span>
+                                        <span className="font-medium">{event.time}</span>
                                     </div>
                                     <div className="flex items-center justify-center gap-2">
                                         <MapPin size={16} className="text-primary" />

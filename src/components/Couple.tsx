@@ -23,8 +23,12 @@ const Couple = () => {
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
                         </div>
-                        <h3 className="text-3xl font-serif text-stone-800 mb-2">Thành Long</h3>
+                        <h3 className="text-3xl font-serif text-stone-800 mb-2">Nguyễn Thành Long</h3>
                         <p className="text-primary font-medium tracking-wider uppercase mb-4">Chú Rể</p>
+                        <div className="text-stone-500 text-sm mb-4 space-y-1">
+                            <p>Con ông: <span className="font-medium text-stone-700">Nguyễn Văn Mạnh</span></p>
+                            <p>Con bà: <span className="font-medium text-stone-700">Phạm Thị Thơi</span></p>
+                        </div>
                         <p className="text-stone-600 leading-relaxed">
                             Là một chàng trai ấm áp, luôn biết quan tâm và chia sẻ.
                             Với Long, Thuỷ là mảnh ghép hoàn hảo nhất mà anh may mắn tìm thấy.
@@ -57,8 +61,12 @@ const Couple = () => {
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                             />
                         </div>
-                        <h3 className="text-3xl font-serif text-stone-800 mb-2">Minh Thuỷ</h3>
+                        <h3 className="text-3xl font-serif text-stone-800 mb-2">Hà Minh Thuỷ</h3>
                         <p className="text-primary font-medium tracking-wider uppercase mb-4">Cô Dâu</p>
+                        <div className="text-stone-500 text-sm mb-4 space-y-1">
+                            <p>Con ông: <span className="font-medium text-stone-700">Hà Minh Quân</span></p>
+                            <p>Con bà: <span className="font-medium text-stone-700">Phan Thị Thanh</span></p>
+                        </div>
                         <p className="text-stone-600 leading-relaxed">
                             Cô gái dịu dàng, tinh tế và luôn tràn đầy năng lượng tích cực.
                             Với Thuỷ, Long là chỗ dựa vững chắc và là người bạn đồng hành tuyệt vời nhất.
