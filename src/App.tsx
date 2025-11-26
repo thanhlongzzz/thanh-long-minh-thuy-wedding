@@ -31,7 +31,6 @@ function App() {
       <Events />
       <Location />
       <Gallery />
-      <Gallery2 />
       <GiftSection />
       <GuestBook />
       <Footer />
