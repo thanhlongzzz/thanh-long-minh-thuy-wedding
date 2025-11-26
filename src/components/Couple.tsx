@@ -17,11 +17,14 @@ const Couple = () => {
                         className="flex flex-col items-center text-center max-w-sm"
                     >
                         <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-stone-100 shadow-xl mb-6 relative group">
-                            <img
-                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Groom"
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
+                            <div
+                                    style={{
+                                        background:'url("/assets/gallery/chu_re.jpg") no-repeat center ',
+                                        backgroundSize: 'cover',   
+                                    }}
+                                    
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
                         </div>
                         <h3 className="text-3xl font-serif text-stone-800 mb-2">Nguyễn Thành Long</h3>
                         <p className="text-primary font-medium tracking-wider uppercase mb-4">Chú Rể</p>
@@ -55,11 +58,14 @@ const Couple = () => {
                         className="flex flex-col items-center text-center max-w-sm"
                     >
                         <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-stone-100 shadow-xl mb-6 relative group">
-                            <img
-                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                alt="Bride"
-                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
+                            <div
+                                    style={{
+                                        background:'url("/assets/gallery/co_dau.jpg") no-repeat center ',
+                                        backgroundSize: 'cover',   
+                                    }}
+                                    
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                />
                         </div>
                         <h3 className="text-3xl font-serif text-stone-800 mb-2">Hà Minh Thuỷ</h3>
                         <p className="text-primary font-medium tracking-wider uppercase mb-4">Cô Dâu</p>

@@ -18,9 +18,9 @@ const LoveQuote = () => {
                 className="absolute inset-0 bg-cover bg-center z-0"
             >
                 <div
-                    className="w-full h-[120%] -mt-[10%]"
+                    className="w-full h-[160%] -mt-[20%]"
                     style={{
-                        backgroundImage: 'url("https://images.unsplash.com/photo-1511285560982-1351cdeb9821?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80")',
+                        backgroundImage: 'url("/assets/gallery/KIM_3992.jpg")',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center'
                     }}

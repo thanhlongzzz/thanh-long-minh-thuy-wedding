@@ -35,7 +35,7 @@ const Events = () => {
             lunarDate: "Mồng 1/11 Ất Tỵ",
             location: "Tư Gia Nhà Gái",
             address: "21E, Phù Sa, Phường Sơn Tây, Hà Nội",
-            image: "https://images.unsplash.com/photo-1519225448526-722609e862e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
         },
         {
             title: "Lễ Thành Hôn",
@@ -44,7 +44,7 @@ const Events = () => {
             lunarDate: "Mồng 2/11 Ất Tỵ",
             location: "Tư Gia Nhà Gái",
             address: "21E, Phù Sa, Phường Sơn Tây, Hà Nội",
-            image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
     ];
 

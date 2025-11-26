@@ -78,7 +78,7 @@ const Gallery: React.FC = () => {
         <SectionTitle title="Khoảnh Khắc Ngọt Ngào" subtitle="Lưu giữ từng phút giây hạnh phúc" />
 
         {/* Masonry using CSS columns */}
-        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 max-w-6xl mx-auto">
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4 max-w-6xl mx-auto">
           {images.map((src, index) => (
             <motion.div
               key={index}
