@@ -3,13 +3,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
 const images = [
-    "https://images.unsplash.com/photo-1519225448526-722609e862e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1522673607200-1645062cd958?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1520854221256-17451cc330e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-];
+                "/assets/gallery/KIM_2354.jpg",
+                "/assets/gallery/KIM_2453.jpg",
+                "/assets/gallery/KIM_2521.jpg",
+                "/assets/gallery/KIM_2684.jpg",
+                "/assets/gallery/KIM_2704.jpg",
+                "/assets/gallery/KIM_2722.jpg",
+                "/assets/gallery/KIM_2786.jpg",
+                "/assets/gallery/KIM_2803.jpg",
+                "/assets/gallery/KIM_2966.jpg",
+                "/assets/gallery/KIM_2977.jpg",
+                "/assets/gallery/KIM_2988.jpg",
+                "/assets/gallery/KIM_2992.jpg",
+                "/assets/gallery/KIM_3285.jpg",
+                "/assets/gallery/KIM_3286.jpg",
+                ];
 
 const Gallery = () => {
     const [selectedId, setSelectedId] = useState<string | null>(null);

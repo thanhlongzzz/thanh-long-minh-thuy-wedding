@@ -15,8 +15,8 @@ const Location = () => {
     const brideLocation = {
         name: "Tư Gia Nhà Gái",
         address: "21E, Phù Sa, Phường Sơn Tây, Hà Nội",
-        mapLink: "https://maps.app.goo.gl/WNsM6fNiTVpbyHMTA",
-        embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.096!2d105.7841!3d21.0347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDAwJzAwLjAiTiAxMDXCsDAwJzAwLjAiRQ!5e0!3m2!1svi!2s!4v1677834567890!5m2!1svi!2s"
+        mapLink: "https://maps.app.goo.gl/CYAJSkkHPueUi4DN9",
+        embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d430.7312715499988!2d105.50625782526747!3d21.15048535428329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134f60c07916fa5%3A0x7e929bb5b10e269e!2zMjFFIFAuIFBow7kgU2EsIFREUCBI4buTbmcgSMOgLCBTxqFuIFTDonksIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1764154411598!5m2!1svi!2s"
     };
 
     const location = activeTab === 'groom' ? groomLocation : brideLocation;
