@@ -218,7 +218,7 @@ const GuestBook = () => {
                                         </span>
                                     </div>
                                     <p className="text-stone-600 mb-4 leading-relaxed pl-10 border-l-2 border-stone-100">
-                                        "{wish.message}"
+                                        {wish.message}
                                     </p>
                                     {wish.attending && (
                                         <div className="flex justify-end">
