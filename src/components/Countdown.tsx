@@ -49,7 +49,7 @@ const Countdown = () => {
                     className="inline-block bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-stone-100"
                 >
                     <p className="text-lg text-stone-500 mb-8 font-serif italic">We are waiting for...</p>
-                    <div className="flex flex-wrap justify-center items-center divide-x divide-stone-200">
+                    <div className="flex flex-wrap justify-center items-center">
                         <TimeUnit value={timeLeft.days} label="Ngày" />
                         <TimeUnit value={timeLeft.hours} label="Giờ" />
                         <TimeUnit value={timeLeft.minutes} label="Phút" />

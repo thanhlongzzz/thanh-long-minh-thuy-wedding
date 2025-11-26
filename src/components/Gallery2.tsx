@@ -58,6 +58,9 @@ const Gallery2: React.FC = () => {
                 alt={photo.alt}
                 className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+                style={{ willChange: 'transform' }}
               />
 
               {/* Elegant Overlay */}
@@ -108,6 +111,10 @@ const Gallery2: React.FC = () => {
               <img
                 src={selectedImage.src}
                 alt={selectedImage.alt}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
+                style={{ willChange: 'transform' }}
                 className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl border border-white/10"
               />
               <div className="mt-4 flex items-center gap-2 text-white/80 font-serif">

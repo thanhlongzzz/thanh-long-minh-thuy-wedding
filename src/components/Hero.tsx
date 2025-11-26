@@ -3,11 +3,13 @@ import { motion } from 'framer-motion';
 const Hero = () => {
     return (
         <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-            {/* Background Image */}
+            {/* Background Image - full cover with smooth left-right drift */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
                 style={{
-                    backgroundImage: 'url("https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80")',
+                    backgroundImage: 'url("/assets/gallery/KIM_2508.JPG")',
+                    backgroundPosition: 'center center',
+                    animation: 'drift 60s ease-in-out infinite',
                     filter: 'brightness(0.6)'
                 }}
             />

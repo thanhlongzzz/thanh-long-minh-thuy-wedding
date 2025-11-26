@@ -11,6 +11,7 @@ import SlideAlbum from './components/SlideAlbum';
 import GiftSection from './components/Gift';
 import GuestBook from './components/GuestBook';
 import Footer from './components/Footer';
+import GoToTop from './components/GoToTop';
 
 function App() {
   useEffect(() => {
@@ -34,6 +35,7 @@ function App() {
       <GiftSection />
       <GuestBook />
       <Footer />
+      <GoToTop />
     </main>
   );
 }
