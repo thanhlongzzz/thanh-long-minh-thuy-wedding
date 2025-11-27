@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && git branch -D build-temp 2>/dev/null || true && git checkout -b build-temp && git add dist -f && git commit -m 'Build output' && git subtree split --prefix dist -b build-split && git push -f origin build-split:build && git checkout main && git branch -D build-temp build-split && rm -rf dist"
   },
   "dependencies": {
     "date-fns": "^4.1.0",
