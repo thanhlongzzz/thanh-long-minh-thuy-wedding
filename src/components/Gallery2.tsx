@@ -3,32 +3,34 @@ import SectionTitle from './SectionTitle';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Heart, Expand } from 'lucide-react';
 
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 // Using a mix of portrait and landscape images for Masonry effect
 const PHOTOS = [
-  { id: 1, src: "/assets/gallery/KIM_2354.jpg", alt: "Trao nhẫn", category: "Ceremony" },
-  { id: 2, src: "/assets/gallery/KIM_2453.jpg", alt: "Cầm tay", category: "Moments" },
-  { id: 3, src: "/assets/gallery/KIM_2521.jpg", alt: "Tiệc cưới", category: "Party" },
-  { id: 4, src: "/assets/gallery/KIM_2684.jpg", alt: "Cô dâu", category: "Portrait" },
-  { id: 5, src: "/assets/gallery/KIM_2704.jpg", alt: "Nụ cười", category: "Moments" },
-  { id: 6, src: "/assets/gallery/KIM_2722.jpg", alt: "Váy cưới", category: "Dress" },
-  { id: 7, src: "/assets/gallery/KIM_2786.jpg", alt: "Hoa cưới", category: "Decor" },
-  { id: 8, src: "/assets/gallery/KIM_2798.jpg", alt: "Hạnh phúc", category: "Emotion" },
+  { id: 1, src: "assets/gallery/KIM_2354.jpg", alt: "Trao nhẫn", category: "Ceremony" },
+  { id: 2, src: "assets/gallery/KIM_2453.jpg", alt: "Cầm tay", category: "Moments" },
+  { id: 3, src: "assets/gallery/KIM_2521.jpg", alt: "Tiệc cưới", category: "Party" },
+  { id: 4, src: "assets/gallery/KIM_2684.jpg", alt: "Cô dâu", category: "Portrait" },
+  { id: 5, src: "assets/gallery/KIM_2704.jpg", alt: "Nụ cười", category: "Moments" },
+  { id: 6, src: "assets/gallery/KIM_2722.jpg", alt: "Váy cưới", category: "Dress" },
+  { id: 7, src: "assets/gallery/KIM_2786.jpg", alt: "Hoa cưới", category: "Decor" },
+  { id: 8, src: "assets/gallery/KIM_2798.jpg", alt: "Hạnh phúc", category: "Emotion" },
 ];
 /* 
-"/assets/gallery/KIM_2354.jpg"
-"/assets/gallery/KIM_2453.jpg"
-"/assets/gallery/KIM_2521.jpg"
-"/assets/gallery/KIM_2684.jpg"
-"/assets/gallery/KIM_2704.jpg"
-"/assets/gallery/KIM_2722.jpg"
-"/assets/gallery/KIM_2786.jpg"
-"/assets/gallery/KIM_2803.jpg"
-"/assets/gallery/KIM_2966.jpg"
-"/assets/gallery/KIM_2977.jpg"
-"/assets/gallery/KIM_2988.jpg"
-"/assets/gallery/KIM_2992.jpg"
-"/assets/gallery/KIM_3285.jpg"
-"/assets/gallery/KIM_3286.jpg"
+"assets/gallery/KIM_2354.jpg"
+"assets/gallery/KIM_2453.jpg"
+"assets/gallery/KIM_2521.jpg"
+"assets/gallery/KIM_2684.jpg"
+"assets/gallery/KIM_2704.jpg"
+"assets/gallery/KIM_2722.jpg"
+"assets/gallery/KIM_2786.jpg"
+"assets/gallery/KIM_2803.jpg"
+"assets/gallery/KIM_2966.jpg"
+"assets/gallery/KIM_2977.jpg"
+"assets/gallery/KIM_2988.jpg"
+"assets/gallery/KIM_2992.jpg"
+"assets/gallery/KIM_3285.jpg"
+"assets/gallery/KIM_3286.jpg"
 */
 
 const Gallery2: React.FC = () => {
@@ -54,7 +56,7 @@ const Gallery2: React.FC = () => {
               onClick={() => setSelectedId(photo.id)}
             >
               <img
-                src={photo.src}
+                src={BASE_URL + photo.src}
                 alt={photo.alt}
                 className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"

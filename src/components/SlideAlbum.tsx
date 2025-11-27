@@ -5,17 +5,19 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 const desktopSlides = [
-    "/assets/gallery/KIM_2408.jpg",
-    "/assets/gallery/KIM_2453.jpg",
-    "/assets/gallery/KIM_2508.jpg",
-    "/assets/gallery/KIM_3924.jpg",
+    "assets/gallery/KIM_2408.jpg",
+    "assets/gallery/KIM_2453.jpg",
+    "assets/gallery/KIM_2508.jpg",
+    "assets/gallery/KIM_3924.jpg",
 ];
 
 const mobileSlides = [
-    "/assets/gallery/KIM_2977.jpg",
-    "/assets/gallery/KIM_3924.jpg",
-    "/assets/gallery/KIM_2786.jpg",
+    "assets/gallery/KIM_2977.jpg",
+    "assets/gallery/KIM_3924.jpg",
+    "assets/gallery/KIM_2786.jpg",
 ];
 
 const SlideAlbum: React.FC = () => {
@@ -55,7 +57,7 @@ const SlideAlbum: React.FC = () => {
                             <div
                                 className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] ease-linear transform scale-100 hover:scale-110 slide-bg"
                                 style={{
-                                    backgroundImage: `url("${src}")`,
+                                    backgroundImage: `url("${BASE_URL}${src}")`,
                                     animation: 'kenburns 20s infinite alternate'
                                 }}
                             />

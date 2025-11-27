@@ -3,26 +3,28 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import SectionTitle from './SectionTitle';
 
+const BASE_URL = import.meta.env.BASE_URL || '/';
+
 const images = [
-    
-  "/assets/gallery/KIM_2354.jpg",
-  "/assets/gallery/KIM_2453.jpg",
-  "/assets/gallery/KIM_2521.jpg",
-  "/assets/gallery/KIM_2684.jpg",
 
-  "/assets/gallery/KIM_2408.jpg",
-  "/assets/gallery/KIM_2704.jpg",
-  "/assets/gallery/KIM_2722.jpg",
-  "/assets/gallery/KIM_2786.jpg",
+  "assets/gallery/KIM_2354.jpg",
+  "assets/gallery/KIM_2453.jpg",
+  "assets/gallery/KIM_2521.jpg",
+  "assets/gallery/KIM_2684.jpg",
 
-  "/assets/gallery/KIM_2798.jpg",
-  "/assets/gallery/KIM_2966.jpg",
-  "/assets/gallery/KIM_2977.jpg",
-  "/assets/gallery/KIM_3992.jpg",
-  "/assets/gallery/KIM_3089.jpg",
-  "/assets/gallery/KIM_3286.jpg",
-  "/assets/gallery/KIM_3980.jpg",
-  "/assets/gallery/KIM_3924.jpg",
+  "assets/gallery/KIM_2408.jpg",
+  "assets/gallery/KIM_2704.jpg",
+  "assets/gallery/KIM_2722.jpg",
+  "assets/gallery/KIM_2786.jpg",
+
+  "assets/gallery/KIM_2798.jpg",
+  "assets/gallery/KIM_2966.jpg",
+  "assets/gallery/KIM_2977.jpg",
+  "assets/gallery/KIM_3992.jpg",
+  "assets/gallery/KIM_3089.jpg",
+  "assets/gallery/KIM_3286.jpg",
+  "assets/gallery/KIM_3980.jpg",
+  "assets/gallery/KIM_3924.jpg",
 ];
 
 const Gallery: React.FC = () => {
@@ -91,7 +93,7 @@ const Gallery: React.FC = () => {
               transition={{ duration: 0.4, delay: index * 0.03 }}
             >
               <img
-                src={src}
+                src={`${BASE_URL}${src}`}
                 alt={`Gallery ${index}`}
                 loading="lazy"
                 decoding="async"

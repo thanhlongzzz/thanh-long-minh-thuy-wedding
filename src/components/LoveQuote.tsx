@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+const BASE_URL = import.meta.env.BASE_URL || '/';
 
 const LoveQuote = () => {
     const ref = useRef(null);
@@ -20,7 +21,7 @@ const LoveQuote = () => {
                 <div
                     className="w-full h-[160%] -mt-[20%]"
                     style={{
-                        backgroundImage: 'url("/assets/gallery/KIM_3992.jpg")',
+                        backgroundImage: 'url("' + BASE_URL + 'assets/gallery/KIM_3992.jpg")',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center'
                     }}

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import SectionTitle from './SectionTitle';
+const BASE_URL = import.meta.env.BASE_URL || '/';
 
 const Couple = () => {
     return (
@@ -19,7 +20,7 @@ const Couple = () => {
                         <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-stone-100 shadow-xl mb-6 relative group">
                             <div
                                     style={{
-                                        background:'url("/assets/gallery/chu_re.jpg") no-repeat center ',
+                                        background:'url("' + BASE_URL + 'assets/gallery/chu_re.jpg") no-repeat center ',
                                         backgroundSize: 'cover',   
                                     }}
                                     
@@ -60,7 +61,7 @@ const Couple = () => {
                         <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-stone-100 shadow-xl mb-6 relative group">
                             <div
                                     style={{
-                                        background:'url("/assets/gallery/co_dau.jpg") no-repeat center ',
+                                        background:'url("' + BASE_URL + 'assets/gallery/co_dau.jpg") no-repeat center ',
                                         backgroundSize: 'cover',   
                                     }}
                                     
