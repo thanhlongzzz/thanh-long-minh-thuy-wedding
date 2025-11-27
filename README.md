@@ -1,4 +1,4 @@
-# 💒 Wedding Website - Thanh Long & Minh Thủy
+# 💒 Wedding Website - Thành Long & Minh Thủy
 
 A beautiful, modern wedding invitation website built with React, TypeScript, and Vite. Features a stunning photo gallery, event details, location maps, and guest book functionality.
 
