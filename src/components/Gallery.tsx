@@ -11,20 +11,27 @@ const images = [
   "assets/gallery/KIM_2453.jpg",
   "assets/gallery/KIM_2521.jpg",
   "assets/gallery/KIM_2684.jpg",
+  "assets/gallery/KIM_3740.jpg",
 
   "assets/gallery/KIM_2408.jpg",
   "assets/gallery/KIM_2704.jpg",
   "assets/gallery/KIM_2722.jpg",
   "assets/gallery/KIM_2786.jpg",
+  "assets/gallery/KIM_2356.jpg",
 
   "assets/gallery/KIM_2798.jpg",
   "assets/gallery/KIM_2966.jpg",
   "assets/gallery/KIM_2977.jpg",
   "assets/gallery/KIM_3992.jpg",
+  "assets/gallery/KIM_3677.jpg",
+
   "assets/gallery/KIM_3089.jpg",
   "assets/gallery/KIM_3286.jpg",
   "assets/gallery/KIM_3980.jpg",
   "assets/gallery/KIM_3924.jpg",
+  "assets/gallery/KIM_3582.jpg",
+
+
 ];
 
 const Gallery: React.FC = () => {
